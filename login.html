@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration</title>
+        <link rel="stylesheet" href="css/login.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="form-box">
+                <h1 id="tittle">Sign In</h1>
+                <form id="logInForm">
+                    <div class="input-group" id="head">
+                        <div class="input-field">
+                            <input type="email" id="email" placeholder="Email">
+                        </div>
+                        <div class="input-field">
+                            <input type="password" id="password" placeholder="Password">
+                        </div>
+                        <p><a href="password.html">Forgot password</a></p>
+                    </div>
+                    <div class="btn-field">
+                        <div class="button-wrapper">
+                            <button type="submit" id="submit">Sign In</button>
+                        </div>
+                        <p>Don't Have An Account Yet?</p>
+                        <div class="button-wrapper">
+                            <button type="button" id="registerBtn"><a href="register.html">Register Here</a></button>
+                        </div>
+                    </div>
+
+                    <span id="error-message" style="color: red;"></span>
+
+                    <!--script to store the email/name wrtitten while loging in to use it on welcome page-->
+                    <script>
+                        const form = document.getElementById('logInForm');
+                        const email = document.getElementById('email');
+                        const password = document.getElementById('password');
+                        const errorMessage = document.getElementById('error-message');
+                    
+                        form.addEventListener('submit', function(e){
+                            e.preventDefault();
+                    
+                            const emailValue = email.value;
+                            const passwordValue = password.value;
+                    
+                            if (emailValue.trim() === '' || passwordValue.trim() === '') {
+                                errorMessage.textContent = 'Please fill in all fields.';
+                            } else {
+                                localStorage.setItem('user-email', emailValue);
+                                window.location.href = 'welcome.html';
+                            }
+                        });
+                    </script>
+
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

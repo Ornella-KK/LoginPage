@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="jquery-3.7.1.js"></script>
+
+        <!--styling the page here to avoid overriding with same groups in style.css-->
+        <style>
+            .container{
+                width: 100%;
+                height: 100vh;
+            }
+        </style>
+    </head>
+    <!--the body of the welcome page begins-->
+    <body>
+        <div class="container">
+            <div class="content">
+                <h1>Student Portal</h1>
+                <p>Welcome <span id="user-email"></span>!!!</p>
+            </div>
+        </div>
+        <!--script to retrieve the email/name wrtitten while loging in-->
+        <script>
+            const emailUser = localStorage.getItem('user-email');
+
+            document.getElementById('user-email').textContent = emailUser;
+
+        </script>
+    </body>
+</html>

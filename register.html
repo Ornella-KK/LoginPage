@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="jquery-3.7.1.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="form-box">
+                <h1 id="tittle">Register Here</h1>
+                <form>
+                    <div class="input-group">
+                        <div class="input-field">
+                            <input type="text" id="firstName" placeholder="First Name">
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="lastName" placeholder="Last Name">
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="studentIdentity" placeholder="Student ID">
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="gender" placeholder="Gender">
+                        </div>
+                        <div class="input-field">
+                            <input type="date" id="dob" placeholder="Date Of Birth">
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="nationality" placeholder="Nationality">
+                        </div>
+                        <div class="input-field">
+                            <input type="email" id="emailRegistered" placeholder="Email">
+                        </div>
+                        <div class="input-field">
+                            <input type="number" id="telNumber" placeholder="Phone Number">
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="phyAddress" placeholder="Physical Address">
+                        </div>
+                        <div class="input-field">
+                            <input type="password" id="passwrd" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="btn-field">
+                        <div class="button-wrapper">
+                            <button type="button" id="registerBtn">Register</button>
+                        </div>
+                        <p>Already Have An Account?</p>
+                        <div class="button-wrapper">
+                            <button type="button" id="signInBtn"><a href="login.html">Sign In</a></button>
+                        </div>
+                    </div>
+
+                    <!--script to see if all the fields have been filled if not an alert is shown-->
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const registerBtn = document.getElementById('registerBtn');
+                            registerBtn.addEventListener('click', function() {
+                                const firstName = document.getElementById('firstName').value;
+                                const lastName = document.getElementById('lastName').value;
+                                const studentIdentity = document.getElementById('studentIdentity').value;
+                                const gender = document.getElementById('gender').value;
+                                const dob = document.getElementById('dob').value;
+                                const nationality = document.getElementById('nationality').value;
+                                const emailRegistered = document.getElementById('emailRegistered').value;
+                                const telNumber = document.getElementById('telNumber').value;
+                                const phyAddress = document.getElementById('phyAddress').value;
+                                const passwrd = document.getElementById('passwrd').value;
+                    
+                                if (
+                                    firstName.trim() === '' ||
+                                    lastName.trim() === '' ||
+                                    studentIdentity.trim() === '' ||
+                                    gender.trim() === '' ||
+                                    dob.trim() === '' ||
+                                    nationality.trim() === '' ||
+                                    emailRegistered.trim() === '' ||
+                                    telNumber.trim() === '' ||
+                                    phyAddress.trim() === '' ||
+                                    passwrd.trim() === ''
+                                ) {
+                                    alert('Please fill in all fields before registering.');
+                                } else {
+                                    alert('Registered successfully!');
+                                    window.location.href = 'login.html';
+                                }
+                            });
+                        });
+                    </script>
+                    
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
